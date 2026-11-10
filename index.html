@@ -1,6 +1,88 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>야박사 클릭해!(made by 쑨옍우청완)</title>
+
+<style>
+  body {
+    background: #fff8dc;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 30px 10px;
+  }
+
+  h1 {
+    font-size: 25px;
+    color: #333;
+  }
+
+  #score {
+    font-size: 55px;
+    font-weight: bold;
+    margin: 35px;
+    color: #ff8c00;
+  }
+
+  #character {
+    width: 250px;
+    max-width: 80%;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #character:active {
+    transform: scale(0.95);
+  }
+
+  p {
+    color: #777;
+    font-size: 17px;
+  }
+</style>
+</head>
+
 <body>
-<h1>야박사의 놀라운 곳인티키티키😭!</h1>
+
+<h1>나는 야박사인.그것은 매우 즐겁고 놀랍다! 쑨옍우청완은 최고의 중국 회사😎</h1>
+
+<div id="score">0</div>
+
+<img
+  id="character"
+  src="yabaksa.png"
+  alt="야박사"
+>
+
+<p>야박사를 클릭하는. 이것은 명령인😭!</p>
+
+<script>
+  let score = 0;
+  let timer;
+
+  const character = document.getElementById("character");
+  const scoreText = document.getElementById("score");
+
+  character.addEventListener("click", function() {
+
+    score += 1;
+    scoreText.textContent = score;
+
+    character.src = "yabaksa2.png";
+
+    clearTimeout(timer);
+
+    timer = setTimeout(function() {
+      character.src = "yabaksa.png";
+    }, 400);
+
+  });
+</script>
+
 </body>
 </html>
+
